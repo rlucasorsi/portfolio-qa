@@ -35,7 +35,7 @@
 <code><img height="32" src="https://skillicons.dev/icons?i=vercel&theme=light" alt="Vercel"/></code>
 
 <p align="left">
-  💌 Você pode me achar nas seguintes plataformas: ⤵️
+Você pode me achar nas seguintes plataformas:
 </p>
 
 <p align="left">
