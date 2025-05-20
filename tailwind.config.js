@@ -35,7 +35,7 @@ module.exports = {
     		},
     		backgroundImage: {
     			'gradient-radial': 'radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))',
-    			'gradient-radial-yellow': 'radial-gradient(circle 28rem at 50% 30%, rgba(201, 134, 71, 0.99) 10%, rgba(111,61,33,1) 80%)'
+    			'gradient-radial-yellow': 'radial-gradient(circle 28rem at 50% 30%, rgba(255, 181, 107, 1) 10%, rgba(140, 68, 30, 1) 80%)'
     		},
     		animation: {
     			'fade-in': 'fade-in 3s ease-in-out forwards',
