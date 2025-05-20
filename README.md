@@ -39,10 +39,10 @@ Você pode me achar nas seguintes plataformas:
 </p>
 
 <p align="left">
-  <a href="https://www.linkedin.com/in/lucas-orsi-43070a176/" target='_blank' alt="Linkedin">
-    <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=gabriel.vscode@mail.com" />
+  <a href="https://www.linkedin.com/in/lucas-orsi-43070a176/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="40" height="40">
   </a>
-</p> 
+</p>
 
 <table style="border: none;">
   <tr>
