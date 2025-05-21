@@ -8,7 +8,7 @@ import { CardContent, CardHeader, CardTitle } from './ui/card'
 export function FormationList() {
   return (
     <section className="space-y-4">
-      <h2 className="text-2xl font-bold text-amber-500 mb-2">
+      <h2 className="z-10 text-lg sm:text-2xl md:text-3xl text-transparent cursor-default text-edge-outline font-display bg-clip-text bg-gradient-radial-yellow tracking-wider mb-4">
         Formação Acadêmica
       </h2>
       
