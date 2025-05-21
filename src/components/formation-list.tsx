@@ -5,9 +5,9 @@ import * as userInfo from '@/util/user-information'
 import { Card } from './card'
 import { CardContent, CardHeader, CardTitle } from './ui/card'
 
-// Componente de título consistente com os outros títulos de seções
+// Componente de título consistente com o original
 const SectionTitle = ({ children }) => (
-  <h2 className="z-10 text-lg sm:text-2xl md:text-3xl text-transparent cursor-default text-edge-outline font-display bg-clip-text bg-gradient-radial-yellow tracking-wider mb-4">
+  <h2 className="z-10 text-lg text-transparent cursor-default text-edge-outline font-display sm:text-2xl md:text-3xl whitespace-nowrap bg-clip-text bg-gradient-radial-yellow tracking-wider">
     {children}
   </h2>
 )
@@ -39,7 +39,7 @@ export function FormationList() {
     <section className="space-y-4">
       <SectionTitle>Formação Acadêmica</SectionTitle>
       
-      <div className="w-full h-px bg-zinc-800 mb-6" />
+      <div className="hidden w-full h-px md:block bg-zinc-800" />
       
       <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2">
         {userInfo.formation.map((formation) => (
