@@ -15,39 +15,58 @@ import { ExperiencesList } from "@/components/experiences-list";
 import { LanguageList } from "@/components/language-list";
 import { ProjectsList } from "@/components/project-list";
 
-// Componente para a seção do perfil do usuário
-const ProfileSection = ({ user }) => (
+// Tipagens
+type User = {
+  name?: string;
+};
+
+type Skill = {
+  name: string;
+  icon: React.ReactNode;
+};
+
+type GitHubUser = {
+  user: User | null;
+};
+
+
+const ProfileSection: React.FC<{ user: User }> = ({ user }) => (
   <section className="max-w-2xl mx-auto lg:mx-0">
     <h2 className="z-10 text-lg sm:text-2xl md:text-3xl text-transparent cursor-default text-edge-outline font-display whitespace-nowrap bg-clip-text bg-gradient-radial-yellow tracking-wider">
       {user?.name}
     </h2>
 
     <p className="mt-4 text-zinc-400">
-      I'm currently working on 🚀 building backend applications with
-      Node.js, focusing on automation and scalable solutions.
+      🚀 Sou apaixonado por garantir a qualidade de software de forma eficiente
+      e inteligente, focando em automação de testes com Cypress para acelerar
+      ciclos de entrega e reduzir falhas em produção.
     </p>
     <p className="mt-4 text-zinc-400">
-      I'm looking to collaborate on 🤝 exciting open-source projects,
-      especially on creating an SRS (Spaced Repetition System) app for
-      language learning!
+      🎯 Minha missão é transformar processos de QA, implementando testes
+      robustos e escaláveis que aumentam a confiança das equipes e melhoram a
+      experiência do usuário final.
     </p>
     <p className="mt-4 text-zinc-400">
-      I'm looking for help with 🙋‍♂️ improving my front-end skills and
-      learning more about advanced JavaScript frameworks.
+      🤝 Busco colaborar em projetos desafiadores onde posso aplicar minha
+      expertise em automação e ajudar a elevar o padrão de qualidade através de
+      inovação e boas práticas.
     </p>
     <p className="mt-4 text-zinc-400">
-      I'm currently learning 📚 more about cloud computing and
-      containerization with Docker and Kubernetes.
+      📚 Estou sempre em evolução, estudando novas tecnologias como frameworks
+      avançados de JavaScript, Docker e Kubernetes para ampliar meu impacto em
+      ambientes de desenvolvimento modernos.
     </p>
     <p className="mt-4 text-zinc-400">
-      Ask me about 💬 test automation with Cypress, backend development
-      with Node.js, and working with SQL databases.
+      💬 Pergunte-me sobre automação de testes com Cypress, integração contínua,
+      desenvolvimento backend com Node.js e otimização de pipelines de QA.
     </p>
   </section>
 );
 
-// Componente genérico para exibir habilidades
-const SkillsSection = ({ title, skills }) => (
+const SkillsSection: React.FC<{ title: string; skills: Skill[] }> = ({
+  title,
+  skills,
+}) => (
   <section className="max-w-2xl mx-auto lg:mx-0">
     <h2 className="z-10 text-lg sm:text-2xl md:text-3xl text-transparent cursor-default text-edge-outline font-display bg-clip-text bg-gradient-radial-yellow tracking-wider mb-4">
       {title}
@@ -61,15 +80,14 @@ const SkillsSection = ({ title, skills }) => (
           className="p-3 border-2 bg-gray-400/30 hover:bg-gray-400/50 text-white rounded-xl flex items-center justify-center transition-colors duration-200"
         >
           <span className="rounded-full p-1 mr-2 text-lg">{skill.icon}</span>
-          <span className="font-medium">{skill.name.toLocaleUpperCase()}</span>
+          <span className="font-medium">{skill.name.toUpperCase()}</span>
         </Badge>
       ))}
     </div>
   </section>
 );
 
-// Componente de Background (separado para melhorar a organização)
-const Background = () => (
+const Background: React.FC = () => (
   <>
     <Image
       alt="Mountains"
@@ -87,22 +105,21 @@ const Background = () => (
 );
 
 export default async function ProjectsPage() {
-  const { user } = await getUserGitHub();
+  const { user }: GitHubUser = await getUserGitHub();
 
   return (
     <div className="pb-16">
       <Navigation />
       <Background />
-      
+
       <div className="px-6 pt-20 mx-auto space-y-8 md:space-y-16 max-w-7xl lg:px-8 md:pt-24 lg:pt-32">
-        <ProfileSection user={user} />
+        {user && <ProfileSection user={user} />}
         <SkillsSection title="Hard Skills" skills={userInfo.hardSkills} />
         <SkillsSection title="Soft Skills" skills={userInfo.softSkills} />
         <FormationList />
         <CousesList />
         <ExperiencesList />
         <LanguageList />
-        {/* ProjectsList está importado mas não estava sendo usado no código original */}
       </div>
     </div>
   );

@@ -201,15 +201,15 @@ export const formation = [
     degree: "Engenharia Elétrica",
     period: "Concluido em 2024",
     describe:
-      "Faculdade em Engenharia Elética pela Universidade São Francisco concluido em Junho de 2024",
+      "Graduado em Engenharia Elétrica pela USF, com foco em projeto de sistemas elétricos, eletrônica de potência e automação industrial. Desenvolvi habilidades em análise de circuitos, controle de sistemas e eficiência energética, utilizando ferramentas como MATLAB e AutoCAD. Atualmente, aplico esses conhecimentos na área de qualidade de software, com ênfase em automação de testes e validação de sistemas.",
     icon: <IoHardwareChip size={40} color={color.white} />,
   },
   {
-    name: "Faculdade Descomplica Digital",
-    degree: "Análise e Desenvolvimento de Sistemas",
-    period: "Em andamento",
+    name: "SENAI Roberto Mange",
+    degree: "Técnico em Mecatrônica",
+    period: "Concluido em 2018",
     describe:
-      "Faculdade de analise e desenvolvimento de sistemas em modalidade EAD. com término em junho de 2026",
+      "Formação técnica em Mecatrônica com foco em automação, eletrônica e sistemas mecânicos. Domínio em programação de CLP, robótica, pneumática e hidráulica. Experiência prática em projetos de sistemas automatizados, utilizando CAD/CAM e sensores industriais, desenvolvendo soluções eficientes para a indústria.",
     icon: <IoHardwareChip size={40} color={color.white} />,
   },
 ];
@@ -239,10 +239,10 @@ export const courses = [
 export const experiences = [
   {
     name: "ContractLabs",
-    position: "Analista de Sistemas",
+    position: "Analista de Sistemas - Foco em QA",
     period: "Atual",
     describe:
-      "Desenvolvimento do novo sistema da empresa que estava em PL/SQL para tecnologias modernas como Node.js, JQuery, Bootstrap, EJS, Express, HTML, CSS, JavaScript e SQL. Inovações com React Native e AI.",
+      "Desenvolvimento e manutenção de sistemas multi-tenant com foco em automação de processos. Implementação de testes automatizados usando Cypress, validação de APIs REST e análise de performance. Participação ativa no ciclo completo de desenvolvimento, desde concepção até deploy, priorizando qualidade e experiência do usuário.",
     icon: <FaLaptopCode size={40} color={color.white} />,
     stack: [
       <SiCypress />,
@@ -260,7 +260,7 @@ export const experiences = [
     position: "Técnico de Testes Jr.",
     period: "Março/2023 – Agosto/2023",
     describe:
-      "Responsável pela direção técnica e desenvolvimento de sistemas para diversos clientes, utilizando tecnologias modernas como Node.js, React, React Native, Bootstrap, Express, JavaScript, SQL, e AI. Especialização em soluções escaláveis e inovadoras para web, mobile e desktop.",
+      "Atuação na engenharia de teste com desenvolvimento de soluções para automação de processos de validação de produtos eletrônicos. Criação de scripts personalizados para otimização de testes, resultando em redução do tempo de ciclo e maior precisão nos processos. Análise de falhas e implementação de melhorias contínuas na qualidade dos produtos. Liderança em projetos de engenharia de teste e coordenação de equipes para atender prazos e metas de qualidade.",
     icon: <FaLaptopCode size={40} color={color.white} />,
     stack: [
       <SiNodedotjs />,

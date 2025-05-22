@@ -10,6 +10,17 @@ export default async function ProjectsPage() {
         repositorios: { repositories, initialRepositories },
     } = await getUserGitHub()
 
+    const filteredRepositories = repositories.filter(
+        (repo) => repo.name !== 'rlucasorsi'
+    )
+    const filteredInitialRepositories = initialRepositories.filter(
+        (repo) => repo.name !== 'rlucasorsi'
+    )
+
+    const otherProjects = filteredRepositories.filter(
+        (repo) => !filteredInitialRepositories.some((initialRepo) => initialRepo.id === repo.id)
+    )
+
     return (
         <div className='pb-16'>
             <Navigation />
@@ -34,9 +45,7 @@ export default async function ProjectsPage() {
                         Projetos
                     </h2>
                     <p className='mt-4 text-zinc-400'>
-                        Uma seleção dos meus melhores projetos. Cada um mostra a
-                        minha habilidade em desenvolvimento de software em
-                        vários níveis e ferramentas.
+                        Uma seleção dos meus melhores projetos, destacando minhas habilidades em qualidade de software, automação de testes e desenvolvimento, com proficiência em diversas ferramentas e tecnologias.
                     </p>
                 </div>
 
@@ -45,7 +54,7 @@ export default async function ProjectsPage() {
                         Destaques
                     </h2>
                     <div className='w-full h-px bg-zinc-800' />
-                    <ProjectsList projects={initialRepositories} />
+                    <ProjectsList projects={filteredInitialRepositories} />
                 </div>
 
                 <div className='space-y-4'>
@@ -53,7 +62,7 @@ export default async function ProjectsPage() {
                         Outros projetos
                     </h2>
                     <div className='hidden w-full h-px md:block bg-zinc-800' />
-                    <ProjectsList projects={repositories} />
+                    <ProjectsList projects={otherProjects} />
                 </div>
             </div>
         </div>
