@@ -30,13 +30,12 @@ module.exports = {
     			}
     		},
     		fontFamily: {
-    			sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-    			display: ["var(--font-calsans)"]
+    			  sans: ["'Roboto'", "'Arial'", "sans-serif"], // Substitui Inter
+				  display: ["var(--font-calsans)"]
     		},
     		backgroundImage: {
     			'gradient-radial': 'radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))',
-    			'gradient-radial-yellow': 'radial-gradient(ellipse at center, rgba(255, 181, 107, 1) 0%, rgba(200, 120, 60, 1) 70%, rgba(255, 181, 107, 1) 100%)'
-    		},
+				'gradient-radial-yellow': 'radial-gradient(ellipse at center, rgba(255, 220, 160, 0.9) 0%, rgba(255, 181, 107, 1) 20%, rgba(200, 120, 60, 1) 60%, rgba(160, 90, 40, 1) 80%, rgba(220, 140, 80, 0.8) 100%)' 	},
     		animation: {
     			'fade-in': 'fade-in 3s ease-in-out forwards',
     			title: 'title 3s ease-out forwards',

@@ -10,6 +10,7 @@ export const navigation = [
     { name: 'Projetos', href: '/projects' },
     { name: 'Contato', href: '/contact' },
     { name: 'Currículo', href: '/curriculum' },
+    { name: 'Sobre mim', href: '/about' }
 ]
 
 export const socials = [
@@ -57,12 +58,12 @@ export default async function Home() {
                 className='absolute top-0'
             />
             <nav className='my-16 animate-fade-in'>
-                <div className='flex items-center justify-center gap-4'>
+                <div className='flex items-center justify-center gap-6 md:gap-8'>
                     {navigation.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
-                            className='text-bold duration-500 text-zinc-400 hover:text-zinc-300'>
+                            className='text-bold duration-500 text-zinc-400 hover:text-zinc-300 text-lg'>
                             {item.name}
                         </Link>
                     ))}

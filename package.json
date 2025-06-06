@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "Gabriel Borges",
-    "email": "gabriel.vscode@gmail.coms",
-    "url": "https://codeborges.com.br"
+    "name": "Lucas Orsi",
+    "email": "rlucasorsi@gmail.com",
+    "url": ""
   },
   "scripts": {
     "dev": "next dev",
