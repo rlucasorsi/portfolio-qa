@@ -46,14 +46,14 @@ export default function About() {
   ];
 
   const skills = [
-    "Selenium WebDriver",
     "Cypress",
-    "Postman/Newman",
-    "Jest/Mocha",
-    "JIRA/Azure DevOps",
-    "Git/GitHub",
-    "SQL/NoSQL",
-    "API Testing",
+    "Jest",
+    "Postman",
+    "Swagger",
+    "Git Actions",
+    "Git",
+    "Rancher",
+    "JavaScript",
   ];
 
   return (
@@ -113,22 +113,22 @@ export default function About() {
               </div>
 
               {/* Texto à direita - ocupa 8 colunas */}
-              <div className="md:col-span-8 text-center md:text-left">
+              <div className="md:col-span-8 text-left">
                 <p className="text-lg md:text-xl text-zinc-300 leading-relaxed mb-6">
                   Desenvolvedor de software especializado em Quality Assurance
-                  com mais de 5 anos de experiência em ambientes corporativos e
-                  startups de alta performance.
+                  com 2 anos de experiência sólida em projetos de tecnologia e
+                  automação de testes.
                 </p>
                 <p className="text-lg md:text-xl text-zinc-300 leading-relaxed mb-6">
-                  Tenho histórico comprovado na implementação de processos de QA
-                  que reduziram bugs em produção em até 80%, estabelecimento de
-                  pipelines de CI/CD e liderança de equipes de teste em projetos
-                  de grande escala.
+                  Experiência prática na implementação de testes automatizados,
+                  integração com pipelines de CI/CD e desenvolvimento de
+                  estratégias de qualidade que garantem entregas confiáveis.
                 </p>
                 <p className="text-lg md:text-xl text-zinc-300 leading-relaxed">
-                  Busco oportunidades em empresas que valorizam qualidade de
-                  software e inovação tecnológica, onde posso contribuir com
-                  minha experiência em automação de testes e metodologias ágeis.
+                  Busco oportunidades para crescer profissionalmente em empresas
+                  que valorizam qualidade de software e inovação tecnológica,
+                  aplicando meus conhecimentos em automação de testes e
+                  metodologias ágeis.
                 </p>
               </div>
             </div>
@@ -152,26 +152,25 @@ export default function About() {
               Experiência Profissional
             </h3>
             <p className="text-zinc-300 leading-relaxed mb-6">
-              <strong className="text-zinc-200">5+ anos</strong> atuando em
-              empresas de tecnologia, desde startups em crescimento até
-              corporações consolidadas. Especialista em criar e implementar
-              estratégias de qualidade que impactam diretamente nos resultados
-              do negócio.
+              <strong className="text-zinc-200">2 anos</strong> de experiência
+              sólida em projetos de tecnologia, com foco em automação de testes
+              e garantia de qualidade. Especialista em criar estratégias
+              eficientes que impactam positivamente na qualidade do produto
+              final.
             </p>
             <p className="text-zinc-300 leading-relaxed mb-6">
-              Experiência comprovada em{" "}
+              Experiência prática em{" "}
               <strong className="text-zinc-200">
-                liderança de equipes de QA
+                desenvolvimento de testes automatizados
               </strong>
-              , definição de processos de teste, implementação de automação e
-              integração com pipelines de CI/CD em ambientes de alta demanda e
-              entregas contínuas.
+              , integração com pipelines de CI/CD e implementação de processos
+              de qualidade em ambientes ágeis com entregas contínuas.
             </p>
             <p className="text-zinc-300 leading-relaxed">
-              <strong className="text-zinc-200">Resultados mensuráveis:</strong>{" "}
-              Redução média de 70% em bugs de produção, implementação de
-              cobertura de testes automatizados acima de 85% e otimização de
-              processos que reduziram o tempo de release em até 40%.
+              <strong className="text-zinc-200">Principais conquistas:</strong>{" "}
+              Implementação de suites de testes automatizados, otimização de
+              processos de QA e contribuição significativa para redução de bugs
+              em produção através de testes eficientes.
             </p>
           </div>
 
@@ -199,7 +198,7 @@ export default function About() {
 
           {/* Competências */}
           <div className="mb-12 animate-fade-in">
-            <h2 className="text-xl font-display text-zinc-200 mb-6 text-center">
+            <h2 className="text-xl font-display text-zinc-200 mb-6 text-left md:text-center">
               Competências Técnicas e Soft Skills:
             </h2>
 
@@ -208,26 +207,24 @@ export default function About() {
                 <div className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-zinc-200 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-zinc-300">
-                    <strong>Automação de Testes:</strong> Selenium, Cypress,
-                    Jest - Criação de suites robustas integradas ao CI/CD
+                    <strong>Automação de Testes:</strong> Cypress, Jest -
+                    Desenvolvimento de testes automatizados integrados ao CI/CD
                   </p>
                 </div>
 
                 <div className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-zinc-200 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-zinc-300">
-                    <strong>Metodologias Ágeis:</strong> Scrum e Kanban -
-                    Experiência em sprints de alta velocidade e releases
-                    frequentes
+                    <strong>Testes de API:</strong> Postman, Swagger -
+                    Validação e documentação de APIs REST
                   </p>
                 </div>
 
                 <div className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-zinc-200 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-zinc-300">
-                    <strong>Liderança Técnica:</strong> Mentoria de equipes,
-                    definição de padrões e processos de qualidade
-                    organizacionais
+                    <strong>DevOps & CI/CD:</strong> Git Actions, Git, Rancher -
+                    Integração e deployment contínuo
                   </p>
                 </div>
               </div>
@@ -236,26 +233,24 @@ export default function About() {
                 <div className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-zinc-200 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-zinc-300">
-                    <strong>Performance & Security:</strong> Testes de carga,
-                    análise de vulnerabilidades e otimização de aplicações
+                    <strong>Desenvolvimento:</strong> JavaScript - Programação
+                    e scripting para automação de testes
                   </p>
                 </div>
 
                 <div className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-zinc-200 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-zinc-300">
-                    <strong>Comunicação Estratégica:</strong> Apresentação de
-                    métricas para stakeholders e tradução técnica para áreas de
-                    negócio
+                    <strong>Metodologias Ágeis:</strong> Experiência em
+                    ambientes Scrum e Kanban com entregas frequentes
                   </p>
                 </div>
 
                 <div className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-zinc-200 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-zinc-300">
-                    <strong>Inovação Contínua:</strong> Implementação de novas
-                    ferramentas e práticas que elevam o padrão de qualidade da
-                    empresa
+                    <strong>Qualidade de Software:</strong> Definição de
+                    processos e padrões para garantia de qualidade contínua
                   </p>
                 </div>
               </div>
@@ -264,7 +259,7 @@ export default function About() {
 
           {/* Tecnologias */}
           <div className="mb-12 animate-fade-in">
-            <h2 className="text-xl font-display text-zinc-200 mb-6 text-center">
+            <h2 className="text-xl font-display text-zinc-200 mb-6 text-left md:text-center">
               Principais tecnologias:
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -284,22 +279,24 @@ export default function About() {
           <div className="w-full h-px bg-gradient-to-r from-zinc-300/0 via-zinc-300/30 to-zinc-300/0 mb-12" />
 
           {/* Call to Action Final */}
-          <div className="text-center bg-zinc-900/50 backdrop-blur-sm border border-zinc-500 rounded-lg p-8 animate-fade-in">
+          <div className="text-left md:text-center bg-zinc-900/50 backdrop-blur-sm border border-zinc-500 rounded-lg p-8 animate-fade-in">
             <h2 className="text-2xl font-display text-zinc-200 mb-4">
               Interessado em conhecer meu trabalho?
             </h2>
             <p className="text-zinc-300 mb-4">
-              Profissional comprometido com resultados e crescimento mútuo.
+              Profissional dedicado e em constante aprendizado, buscando
+              crescimento e oportunidades de contribuir com projetos
+              desafiadores.
             </p>
             <p className="text-zinc-300 mb-8">
-              Estou em busca de desafios onde possa aplicar minha experiência em
-              QA para contribuir com o sucesso de produtos digitais de alta
-              qualidade.
+              Estou em busca de oportunidades onde possa aplicar e expandir
+              meus conhecimentos em QA, contribuindo para o desenvolvimento de
+              produtos digitais de alta qualidade.
             </p>
             <p className="text-lg text-zinc-200 mb-8 font-medium">
               Vamos conversar sobre oportunidades?
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-start md:justify-center">
               <Link
                 href="/contact"
                 className="duration-500 text-zinc-400 hover:text-zinc-300 border border-zinc-500 bg-zinc-900 hover:border-zinc-400 px-8 py-3 rounded-lg font-semibold transition-all"

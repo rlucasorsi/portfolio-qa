@@ -42,7 +42,7 @@ export function Extructure({ children }: { children: ReactNode }) {
                             </span>
                             <Link
                                 target='_blank'
-                                href='https://github.com/GabrielBorges2000'>
+                                href='https://github.com/rlucasorsi'>
                                 <Github
                                     className={`w-6 h-6 duration-200 hover:font-medium ${
                                         isIntersecting

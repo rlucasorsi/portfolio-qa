@@ -44,60 +44,71 @@ export default async function Home() {
     const { user } = await getUserGitHub()
 
     return (
-        <div className='flex flex-col items-center justify-center w-screen h-screen max-h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black'>
+        <div className='flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black'>
             <Image
                 alt='Mountains'
                 src={'/hero-background.svg'}
                 fill
                 sizes='(min-width: 120rem) 50vw, 100vw'
                 style={{
-                    objectFit: 'cover', // cover, contain, none
+                    objectFit: 'cover',
                 }}
                 quality={100}
                 priority
                 className='absolute top-0'
             />
-            <nav className='my-16 animate-fade-in'>
-                <div className='flex items-center justify-center gap-6 md:gap-8'>
-                    {navigation.map((item) => (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            className='text-bold duration-500 text-zinc-400 hover:text-zinc-300 text-lg'>
-                            {item.name}
-                        </Link>
-                    ))}
-                </div>
-            </nav>
-            <div className='hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0' />
+            
             <Particles
                 className='absolute inset-0 -z-10 animate-fade-in'
                 quantity={100}
             />
-            <h1 className='z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text bg-gradient-radial-yellow'>
-                {user?.name}
-            </h1>
+            
+            {/* Centered content */}
+            <div className='flex flex-col items-center justify-center text-center z-10 px-4'>
+                {/* Navigation - closer to title */}
+                <nav className='mb-16 sm:mb-20 animate-fade-in'>
+                    <div className='flex items-center justify-center gap-6 sm:gap-8 md:gap-12 flex-wrap'>
+                        {navigation.map((item) => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className='text-zinc-400 hover:text-zinc-300 duration-500 text-base sm:text-lg font-medium'>
+                                {item.name}
+                            </Link>
+                        ))}
+                    </div>
+                </nav>
 
-            <div className='hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0' />
-            <div className='my-16 text-center animate-fade-in'>
-                <h2 className='text-sm md:text-lg text-zinc-300 '>
-                    {user?.bio}
-                </h2>
-            </div>
-            <div className='flex flex-row gap-8 text-center animate-fade-in'>
-                {socials.map((s) => (
-                    <Link
-                        key={s.href}
-                        href={s.href}
-                        target='_blank'
-                        className='flex flex-col items-center text-zinc-300'
-                        title={transformePhone(s.handle)}>
-                        <span className='hover:shadow-sm hover:shadow-zinc-100 relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-300 border rounded-full text-zinc-200 border-zinc-500 bg-zinc-900 drop-shadow-orange'>
-                            {s.icon}
-                        </span>
-                        {s.label}
-                    </Link>
-                ))}
+                {/* Main title - centered and prominent */}
+                <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display bg-clip-text bg-gradient-radial-yellow mb-16 sm:mb-20'>
+                    {user?.name}
+                </h1>
+
+                {/* Bio - minimal spacing */}
+                <div className='mb-12 sm:mb-16 animate-fade-in'>
+                    <h2 className='text-sm sm:text-base md:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed'>
+                        {user?.bio}
+                    </h2>
+                </div>
+                
+                {/* Social links - close to content */}
+                <div className='flex flex-row gap-6 sm:gap-8 md:gap-10 animate-fade-in'>
+                    {socials.map((s) => (
+                        <Link
+                            key={s.href}
+                            href={s.href}
+                            target='_blank'
+                            className='flex flex-col items-center text-zinc-400 hover:text-zinc-300 group transition-colors duration-300'
+                            title={transformePhone(s.handle)}>
+                            <span className='flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 text-sm border border-zinc-600 rounded-full bg-zinc-800/50 backdrop-blur-sm group-hover:border-zinc-500 group-hover:bg-zinc-700/50 transition-all duration-300'>
+                                {s.icon}
+                            </span>
+                            <span className='text-xs sm:text-sm mt-3 font-medium'>
+                                {s.label}
+                            </span>
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     )

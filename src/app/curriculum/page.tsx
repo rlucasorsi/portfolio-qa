@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Eye } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { getUserGitHub } from "@/util/get-user";
 import * as userInfo from "@/util/user-information";
@@ -13,7 +11,6 @@ import { FormationList } from "@/components/formation-list";
 import { CousesList } from "@/components/couses-list";
 import { ExperiencesList } from "@/components/experiences-list";
 import { LanguageList } from "@/components/language-list";
-import { ProjectsList } from "@/components/project-list";
 
 // Tipagens
 type User = {

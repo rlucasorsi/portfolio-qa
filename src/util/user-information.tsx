@@ -1,31 +1,26 @@
 import color from "tailwindcss/colors";
 
 import { Code2, Database } from "lucide-react";
-import { BiLogoTypescript } from "react-icons/bi";
-import { DiJqueryLogo } from "react-icons/di";
 import { SiCypress, SiPython } from "react-icons/si";
 import {
+  FaShippingFast,
+  FaNetworkWired, 
+  FaBug,
   FaBookOpen,
-  FaBootstrap,
   FaBrain,
   FaClock,
-  FaCode,
   FaCommentDots,
   FaCss3,
   FaDocker,
-  FaFigma,
   FaGithub,
   FaHandHoldingHeart,
-  FaHandshake,
   FaHtml5,
   FaJsSquare,
   FaLaptopCode,
   FaLightbulb,
   FaNodeJs,
   FaPuzzlePiece,
-  FaReact,
   FaRobot,
-  FaSchool,
   FaSmile,
   FaSyncAlt,
   FaUsers,
@@ -33,7 +28,7 @@ import {
 import { FaGitAlt, FaLanguage } from "react-icons/fa6";
 import { GrMysql, GrOracle } from "react-icons/gr";
 import { IoHardwareChip, IoLogoElectron, IoLogoVercel } from "react-icons/io5";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { MdEngineering } from "react-icons/md";
 import {
   SiBootstrap,
   SiCss3,
@@ -51,7 +46,6 @@ import {
   SiZod,
 } from "react-icons/si";
 
-import { GiTeacher } from "react-icons/gi";
 
 export const hardSkills = [
   {
@@ -243,7 +237,7 @@ export const experiences = [
     period: "Atual",
     describe:
       "Desenvolvimento e manutenção de sistemas multi-tenant com foco em automação de processos. Implementação de testes automatizados usando Cypress, validação de APIs REST e análise de performance. Participação ativa no ciclo completo de desenvolvimento, desde concepção até deploy, priorizando qualidade e experiência do usuário.",
-    icon: <FaLaptopCode size={40} color={color.white} />,
+    icon: <FaBug  size={35} color={color.white} />,
     stack: [
       <SiCypress />,
       <SiNodedotjs />,
@@ -261,7 +255,47 @@ export const experiences = [
     period: "Março/2023 – Agosto/2023",
     describe:
       "Atuação na engenharia de teste com desenvolvimento de soluções para automação de processos de validação de produtos eletrônicos. Criação de scripts personalizados para otimização de testes, resultando em redução do tempo de ciclo e maior precisão nos processos. Análise de falhas e implementação de melhorias contínuas na qualidade dos produtos. Liderança em projetos de engenharia de teste e coordenação de equipes para atender prazos e metas de qualidade.",
-    icon: <FaLaptopCode size={40} color={color.white} />,
+    icon: <MdEngineering  size={40} color={color.white} />,
+    stack: [
+      <SiNodedotjs />,
+      <SiJquery />,
+      <SiBootstrap />,
+      <SiExpress />,
+      <SiHtml5 />,
+      <SiCss3 />,
+      <SiJavascript />,
+      <SiMysql />,
+      <SiReact />,
+      <SiReactos />,
+    ],
+  },
+    {
+    name: "Robert Bosch",
+    position: "Estagiário em Logística Física",
+    period: "Fevereiro/2021 – Agosto/2021",
+    describe:
+      "Atuação como estagiário na área de logística física, com foco no apoio às atividades de transporte interno de materiais. Acompanhamento do fluxo de movimentação entre setores produtivos, controle de entrada e saída de componentes e apoio na organização de materiais para otimização do espaço e agilidade nos processos. Colaboração com a equipe de logística para garantir a correta distribuição de insumos conforme as demandas de produção.",
+    icon: <FaShippingFast  size={40} color={color.white} />,
+    stack: [
+      <SiNodedotjs />,
+      <SiJquery />,
+      <SiBootstrap />,
+      <SiExpress />,
+      <SiHtml5 />,
+      <SiCss3 />,
+      <SiJavascript />,
+      <SiMysql />,
+      <SiReact />,
+      <SiReactos />,
+    ],
+  },
+    {
+    name: "Jabil do Brasil",
+    position: "Estagiário em Engenharia de Testes",
+    period: "Dezembro/2019 – Janeiro/2021",
+    describe:
+      "Suporte à equipe de engenharia de teste no desenvolvimento e na automação de processos de validação de produtos eletrônicos. Auxílio na criação de scripts para otimização de testes e melhoria da eficiência. Participação na análise de falhas e propostas de melhorias contínuas nos processos de qualidade. Colaboração em projetos com foco em aprendizado técnico e desenvolvimento profissional.",
+    icon: <MdEngineering  size={40} color={color.white} />,
     stack: [
       <SiNodedotjs />,
       <SiJquery />,
