@@ -47,7 +47,6 @@ export default function About() {
 
   const skills = [
     "Cypress",
-    "Jest",
     "Postman",
     "Swagger",
     "Git Actions",
@@ -97,12 +96,12 @@ export default function About() {
             <div className="grid md:grid-cols-12 gap-12 items-start">
               {/* Foto à esquerda - ocupa 4 colunas */}
               <div className="md:col-span-4 flex justify-center md:justify-start">
-                <div className="relative w-72 h-96 rounded-lg overflow-hidden">
+                <div className="relative w-72 h-96 lg:w-80 lg:h-[26rem] xl:w-96 xl:h-[30rem] rounded-lg overflow-hidden md:-mt-20">
                   <Image
                     src="/profile-picture.png"
                     alt="Foto de Perfil QA Engineer"
                     fill
-                    sizes="288px"
+                    sizes="(max-width: 768px) 288px, (max-width: 1280px) 320px, 384px"
                     style={{
                       objectFit: "cover",
                     }}
@@ -115,7 +114,7 @@ export default function About() {
               {/* Texto à direita - ocupa 8 colunas */}
               <div className="md:col-span-8 text-left">
                 <p className="text-lg md:text-xl text-zinc-300 leading-relaxed mb-6">
-                  Desenvolvedor de software especializado em Quality Assurance
+                  Analista de sistemas especializado em Quality Assurance
                   com 2 anos de experiência sólida em projetos de tecnologia e
                   automação de testes.
                 </p>
@@ -207,7 +206,7 @@ export default function About() {
                 <div className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-zinc-200 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-zinc-300">
-                    <strong>Automação de Testes:</strong> Cypress, Jest -
+                    <strong>Automação de Testes:</strong> Cypress -
                     Desenvolvimento de testes automatizados integrados ao CI/CD
                   </p>
                 </div>
@@ -296,16 +295,16 @@ export default function About() {
             <p className="text-lg text-zinc-200 mb-8 font-medium">
               Vamos conversar sobre oportunidades?
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-start md:justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contact"
-                className="duration-500 text-zinc-400 hover:text-zinc-300 border border-zinc-500 bg-zinc-900 hover:border-zinc-400 px-8 py-3 rounded-lg font-semibold transition-all"
+                className="duration-500 text-zinc-400 hover:text-zinc-300 border border-zinc-500 bg-zinc-900 hover:border-zinc-400 px-8 py-3 rounded-lg font-semibold transition-all text-center w-full sm:w-auto"
               >
                 Entre em Contato
               </Link>
               <Link
                 href="/projects"
-                className="duration-500 text-zinc-400 hover:text-zinc-300 border border-zinc-500 bg-zinc-900 hover:border-zinc-400 px-8 py-3 rounded-lg font-semibold transition-all"
+                className="duration-500 text-zinc-400 hover:text-zinc-300 border border-zinc-500 bg-zinc-900 hover:border-zinc-400 px-8 py-3 rounded-lg font-semibold transition-all text-center w-full sm:w-auto"
               >
                 Ver Meu Portfólio
               </Link>
