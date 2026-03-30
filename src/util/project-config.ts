@@ -9,7 +9,7 @@ export interface ProjectMapping {
 
 export const projectCategories = {
     automation: {
-        title: 'Automation',
+        title: 'Automation (QA)',
     },
 
     frontend: {
