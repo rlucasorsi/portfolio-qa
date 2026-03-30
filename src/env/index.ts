@@ -6,9 +6,6 @@ const envSchema = z.object({
         .default('development'),
     NEXT_PUBLIC_GITHUB_USERNAME: z.string(),
     NEXT_PUBLIC_GITHUB_API_TOKEN: z.string(),
-    NEXT_PUBLIC_REPOSITORIES_EMPHASIS_ARRAY: z
-        .string()
-        .transform((str) => str.split(',')),
     NEXT_PUBLIC_REPOSITORIES_ARRAY: z
         .string()
         .transform((str) => str.split(',')),
@@ -29,8 +26,6 @@ if (typeof window === 'undefined') {
     env = {
         NEXT_PUBLIC_GITHUB_USERNAME: process.env.NEXT_PUBLIC_GITHUB_USERNAME,
         NEXT_PUBLIC_GITHUB_API_TOKEN: process.env.NEXT_PUBLIC_GITHUB_API_TOKEN,
-        NEXT_PUBLIC_REPOSITORIES_EMPHASIS_ARRAY:
-            process.env.NEXT_PUBLIC_REPOSITORIES_EMPHASIS_ARRAY?.split(','),
         NEXT_PUBLIC_REPOSITORIES_ARRAY:
             process.env.NEXT_PUBLIC_REPOSITORIES_ARRAY?.split(','),
     }

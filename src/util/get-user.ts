@@ -1,18 +1,27 @@
 import { env } from '../env'
 
+import { projectMappings, ProjectCategory } from './project-config'
+
 export interface Repository {
     id: number
     name: string
-    description: string
-    project_url: string
-    project_api_url: string
-    views: number
+    description: string | null
+    project_url: string | undefined
+    project_api_url: string | undefined
+    views: number | undefined
     created_at: string
-    homepage: string
+    homepage: string | null
     html_url?: string
     url?: string
     watchers_count?: number
 }
+
+export interface CategorizedRepositories {
+    [key: string]: {
+        [key: string]: Repository[]
+    }
+}
+
 export interface User {
     name: string
     bio: string
@@ -23,8 +32,8 @@ export interface User {
 export interface GithubUser {
     user: User | null
     repositorios: {
-        initialRepositories: Repository[] | []
         repositories: Repository[] | []
+        categorizedRepositories: CategorizedRepositories
     }
 }
 
@@ -87,11 +96,13 @@ export const getUserGitHub = async (): Promise<GithubUser> => {
         homepage: repo.homepage,
     })
 
-    const repositorios1 = await Promise.all(repositoriosPage1.map(formatRepo))
-    const repositorios2 = await Promise.all(repositoriosPage2.map(formatRepo))
-    const repositorios3 = await Promise.all(repositoriosPage3.map(formatRepo))
+    const repositoriosAll = [
+        ...repositoriosPage1,
+        ...repositoriosPage2,
+        ...repositoriosPage3,
+    ]
 
-    const repositorios = [...repositorios1, ...repositorios2, ...repositorios3]
+    const repositorios = repositoriosAll.map(formatRepo)
 
     const user = {
         name: userData.name,
@@ -100,23 +111,33 @@ export const getUserGitHub = async (): Promise<GithubUser> => {
         repos_url,
     }
 
-    const initialRepositories = env.NEXT_PUBLIC_REPOSITORIES_EMPHASIS_ARRAY
-    const repositories = env.NEXT_PUBLIC_REPOSITORIES_ARRAY
+    const repositoriesArray = env.NEXT_PUBLIC_REPOSITORIES_ARRAY
 
-    const projectsInitials = repositorios.filter((repo) =>
-        initialRepositories.some((padrao: Repository) =>
-            repo.name.includes(padrao)
-        )
+    const filteredRepositories = repositorios.filter((repo) =>
+        repositoriesArray.some((padrao: string) => repo.name.includes(padrao))
     )
-    const projects = repositorios.filter((repo) =>
-        repositories.some((padrao: Repository) => repo.name.includes(padrao))
-    )
+
+    const categorizedRepositories: CategorizedRepositories = {}
+
+    projectMappings.forEach((mapping) => {
+        const repo = repositorios.find((r) => r.name === mapping.repoName)
+        if (repo) {
+            if (!categorizedRepositories[mapping.category]) {
+                categorizedRepositories[mapping.category] = {}
+            }
+            if (!categorizedRepositories[mapping.category][mapping.subcategory]) {
+                categorizedRepositories[mapping.category][mapping.subcategory] = []
+            }
+            categorizedRepositories[mapping.category][mapping.subcategory].push(repo)
+        }
+    })
 
     return {
         user,
         repositorios: {
-            initialRepositories: projectsInitials,
-            repositories: projects,
+            repositories: filteredRepositories,
+            categorizedRepositories,
         },
     }
 }
+

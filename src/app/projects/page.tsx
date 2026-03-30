@@ -2,24 +2,14 @@ import { Navigation } from '@/components/nav'
 import Particles from '@/components/particles'
 import { ProjectsList } from '@/components/project-list'
 import { getUserGitHub } from '@/util/get-user'
+import { projectCategories } from '@/util/project-config'
 import Image from 'next/image'
 import React from 'react'
 
 export default async function ProjectsPage() {
     const {
-        repositorios: { repositories, initialRepositories },
+        repositorios: { categorizedRepositories },
     } = await getUserGitHub()
-
-    const filteredRepositories = repositories.filter(
-        (repo) => repo.name !== 'rlucasorsi'
-    )
-    const filteredInitialRepositories = initialRepositories.filter(
-        (repo) => repo.name !== 'rlucasorsi'
-    )
-
-    const otherProjects = filteredRepositories.filter(
-        (repo) => !filteredInitialRepositories.some((initialRepo) => initialRepo.id === repo.id)
-    )
 
     return (
         <div className='pb-16'>
@@ -49,22 +39,35 @@ export default async function ProjectsPage() {
                     </p>
                 </div>
 
-                <div className='space-y-4'>
-                    <h2 className='z-10 text-lg text-transparent cursor-default text-edge-outline font-display sm:text-2xl md:text-3xl whitespace-nowrap bg-clip-text bg-gradient-radial-yellow tracking-wider'>
-                        Destaques
-                    </h2>
-                    <div className='w-full h-px bg-zinc-800' />
-                    <ProjectsList projects={filteredInitialRepositories} />
-                </div>
+                {Object.entries(projectCategories).map(([categoryKey, category]) => {
+                    const subcategories = categorizedRepositories[categoryKey]
+                    if (!subcategories) return null
 
-                <div className='space-y-4'>
-                    <h2 className='z-10 text-lg text-transparent cursor-default text-edge-outline font-display sm:text-2xl md:text-3xl whitespace-nowrap bg-clip-text bg-gradient-radial-yellow tracking-wider'>
-                        Outros projetos
-                    </h2>
-                    <div className='hidden w-full h-px md:block bg-zinc-800' />
-                    <ProjectsList projects={otherProjects} />
-                </div>
+                    return (
+                        <div key={categoryKey} className='space-y-12'>
+                            <div className='space-y-4'>
+                                <h2 className='z-10 text-2xl text-transparent cursor-default text-edge-outline font-display sm:text-3xl md:text-5xl whitespace-nowrap bg-clip-text bg-gradient-radial-yellow tracking-wider uppercase'>
+                                    {category.title}
+                                </h2>
+                                <div className='w-full h-px bg-zinc-800' />
+                            </div>
+
+                            {Object.entries(subcategories).map(([subTitle, projects]) => {
+                                if (!projects || projects.length === 0) return null
+
+                                return (
+                                    <div key={subTitle} className='space-y-6 ml-4 md:ml-8'>
+                                        <h3 className='text-xl font-semibold text-zinc-200 border-l-4 border-yellow-500 pl-4'>
+                                            {subTitle}
+                                        </h3>
+                                        <ProjectsList projects={projects} />
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
-}
+}
