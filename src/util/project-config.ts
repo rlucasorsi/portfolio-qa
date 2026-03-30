@@ -1,9 +1,9 @@
-export type ProjectCategory = 'frontend' | 'automation'
+export type ProjectCategory = 'frontend' | 'automation';
 
 export interface ProjectMapping {
-    repoName: string
-    category: ProjectCategory
-    subcategory: string
+  repoName: string;
+  category: ProjectCategory;
+  subcategory: string;
 }
 
 export const projectCategories = {
@@ -19,7 +19,7 @@ export const projectCategories = {
 export const projectMappings: ProjectMapping[] = [
   // Cypress
   {
-    repoName: 'react_multistep_form',
+    repoName: 'react-multistep-form',
     category: 'automation',
     subcategory: 'Cypress • Testes E2E • CI/CD',
   },
@@ -36,7 +36,7 @@ export const projectMappings: ProjectMapping[] = [
 
   // Frontend
   {
-    repoName: 'react_multistep_form',
+    repoName: 'react-multistep-form',
     category: 'frontend',
     subcategory: 'React',
   },
