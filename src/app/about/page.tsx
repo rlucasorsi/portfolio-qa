@@ -1,14 +1,8 @@
 import { Navigation } from '@/components/nav'
 import {
-    ArrowLeft,
-    Award,
     Bug,
     CheckCircle,
-    GraduationCap,
-    Heart,
     Shield,
-    Target,
-    Users,
     Zap,
 } from 'lucide-react'
 import Image from 'next/image'
@@ -35,14 +29,6 @@ export default function About() {
             description:
                 'Desenvolvimento de scripts automatizados para otimizar processos de teste e garantir entregas mais rápidas.',
         },
-    ]
-
-    const benefits = [
-        'Redução de bugs em produção através de testes rigorosos',
-        'Implementação de processos de QA desde o início do projeto',
-        'Criação de documentação detalhada de casos de teste',
-        'Mentoria em boas práticas de qualidade de software',
-        'Análise de performance e otimização de aplicações',
     ]
 
     const skills = [
