@@ -1,4 +1,4 @@
-export function transformePhone(number: string): string {
+export function transformPhone(number: string): string {
     // Remove todos os caracteres não numéricos do número de telefone
     const numberClean = number.replace(/\D/g, '')
 

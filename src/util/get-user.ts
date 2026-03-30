@@ -1,6 +1,6 @@
 import { env } from '../env'
 
-import { projectMappings, ProjectCategory } from './project-config'
+import { ProjectCategory, projectMappings } from './project-config'
 
 export interface Repository {
     id: number
@@ -119,18 +119,23 @@ export const getUserGitHub = async (): Promise<GithubUser> => {
 
     const categorizedRepositories: CategorizedRepositories = {}
 
-    projectMappings.forEach((mapping) => {
+    for (const mapping of projectMappings) {
         const repo = repositorios.find((r) => r.name === mapping.repoName)
         if (repo) {
             if (!categorizedRepositories[mapping.category]) {
                 categorizedRepositories[mapping.category] = {}
             }
-            if (!categorizedRepositories[mapping.category][mapping.subcategory]) {
-                categorizedRepositories[mapping.category][mapping.subcategory] = []
+            if (
+                !categorizedRepositories[mapping.category][mapping.subcategory]
+            ) {
+                categorizedRepositories[mapping.category][mapping.subcategory] =
+                    []
             }
-            categorizedRepositories[mapping.category][mapping.subcategory].push(repo)
+            categorizedRepositories[mapping.category][mapping.subcategory].push(
+                repo
+            )
         }
-    })
+    }
 
     return {
         user,
@@ -140,4 +145,3 @@ export const getUserGitHub = async (): Promise<GithubUser> => {
         },
     }
 }
-

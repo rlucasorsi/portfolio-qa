@@ -1,6 +1,6 @@
 'use client'
 
-import * as userInfo from '@/util/user-information'
+import * as userInfo from '@/data/user-info'
 import React from 'react'
 import { Card } from './card'
 import { CardContent, CardHeader, CardTitle } from './ui/card'
